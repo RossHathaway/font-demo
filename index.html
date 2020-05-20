@@ -1,47 +1,59 @@
-<!doctype html>
-<html lang='en'>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="theme-color" content="#333333" />
 
-<head>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width,initial-scale=1.0'>
-  <meta name='theme-color' content='#333333'>
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Serif|Lora|Noto+Serif|Crimson+Text|Vollkorn|Crimson+Pro|Gelasio|Merriweather|Roboto+Slab|Playfair+Display|Arvo|Alegreya|Cardo&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <link
-    href="https://fonts.googleapis.com/css?family=PT+Serif|Lora|Noto+Serif|Crimson+Text|Vollkorn|Crimson+Pro|Gelasio|Merriweather|Roboto+Slab|Playfair+Display|Arvo|Alegreya|Cardo&display=swap"
-    rel="stylesheet">
-</head>
+  <body style="font-size: 2em;">
+    <div id="fonts"></div>
 
-<body style="font-size: 2em;">
-  <div id="fonts">
+    <script>
+      const centuryFonts = [
+        'PT Serif',
+        'Lora',
+        'Noto Serif',
+        'Crimson Text',
+        'Vollkorn',
+        'Crimson Pro',
+        'Gelasio',
+      ];
 
-  </div>
+      const lucidaFonts = [
+        'Merriweather',
+        'Roboto Slab',
+        'Playfair Display',
+        'Alegreya',
+        'Cardo',
+      ];
 
+      const fontContainer = document.getElementById('fonts');
 
-  <script>
-    const centuryFonts = ['PT Serif', 'Lora', 'Noto Serif', 'Crimson Text', 'Vollkorn', 'Crimson Pro', 'Gelasio']
+      function addFont(fontName) {
+        fontContainer.insertAdjacentHTML(
+          'beforeend',
+          `<p style="font-family: ${fontName};">
 
-    const lucidaFonts = ['Merriweather', 'Roboto Slab', 'Playfair Display', 'Alegreya', 'Cardo']
-
-    const fontContainer = document.getElementById('fonts');
-
-    function addFont(fontName) {
-      fontContainer.insertAdjacentHTML('beforeend', `<p style="font-family: ${fontName};">
-
-        ${fontName}: &#257; a &#275; e &#299; i &#333; o &#363; u &#563; y &Amacr; A &Emacr; E &Imacr; I &Omacr; O &Umacr; U ‘?’ “!” 'abc' "def" it's
+        ${fontName}: &#257; a &#275; e &#299; i &#333; o &#363; u &#563; y &Amacr; A &Emacr; E &Imacr; I &Omacr; O &Umacr; U ‘?’ “!” 'abc' "def" it's aJja
   <br />
 Hui Ho'o&#363;lu '&Omacr;lelo Hawai'i, Hilo (Hawaiian Language Club)
-        </p>`);
+        </p>`
+        );
+      }
 
-    }
+      for (let i = 0; i < centuryFonts.length; i++) {
+        addFont(centuryFonts[i]);
+      }
 
-    for (let i = 0; i < centuryFonts.length; i++) {
-      addFont(centuryFonts[i])
-    }
-
-    for (let i = 0; i < lucidaFonts.length; i++) {
-      addFont(lucidaFonts[i])
-    }
-  </script>
-</body>
-
+      for (let i = 0; i < lucidaFonts.length; i++) {
+        addFont(lucidaFonts[i]);
+      }
+    </script>
+  </body>
 </html>
